@@ -1,0 +1,5 @@
+<h1>sake detail</h1>
+<p><%= @drinking.name %></p>
+<p><%= @drinking.brewery.name %></p>
+<p><%= image_tag("/system/sakes/photos/000/000/001/original#{@sake.photo_file_name}", :alt => "image") %>
+<p><%= link_to 'Vote', new_drinking_path, remote: true %></p>

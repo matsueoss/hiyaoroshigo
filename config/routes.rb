@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :sakes, only: [:index]
     resources :checkins, only: [:index, :create]
   end
-  resources :drinkings, only: [:index, :new, :create, :delete]
+  resources :drinkings, only: [:index, :new, :create, :delete, :show]
   get :itsitoolate, to: "festivals#itstoolate"
   get :thewinner, to: "festivals#thewinner"
 end

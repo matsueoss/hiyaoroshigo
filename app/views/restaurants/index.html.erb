@@ -1,4 +1,4 @@
 <h1>restaurants</h1>
 <% @restaurants.each do |restaurant| %>
-  <p><%= restaurant.name %></p>
+  <p><%= link_to restaurant.name, restaurant %></p>
 <% end %>

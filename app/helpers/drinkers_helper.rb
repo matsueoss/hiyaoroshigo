@@ -1,0 +1,2 @@
+module DrinkersHelper
+end

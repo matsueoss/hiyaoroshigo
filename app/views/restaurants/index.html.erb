@@ -2,3 +2,9 @@
 <% @restaurants.each do |restaurant| %>
   <p><%= link_to restaurant.name, restaurant %></p>
 <% end %>
+<!-- TODO -->
+<!-- 仮のログインリンク -->
+<!-- こんな感じでパスフレーズを渡してやれば、 -->
+<!-- Drinker::OmniauthCallbacksControllerで、 -->
+<!-- request.env['omniauth.params']で値が取得できる -->
+<%= link_to 'ログイン', '/drinker/auth/facebook?flag=1' %>

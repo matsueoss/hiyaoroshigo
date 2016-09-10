@@ -1,0 +1,7 @@
+<h1>Shops</h1>
+<div>
+  <%= form_for(@checkin) do %>
+    <%= collection_select(:restaurant, :id, @restaurants, :id, :name) %>
+    <input type="submit" value="送信"><input type="reset" value="リセット">
+  <% end %>
+</div>

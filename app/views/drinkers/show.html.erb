@@ -1,0 +1,10 @@
+﻿<h1>プロフィール</h1>
+
+<div>
+  <p><b>ニックネーム: </b><%= @drinker_name %></p>
+  <%= link_to 'Edit', edit_drinker_path%>
+</div>
+
+<div>
+  <%= link_to "Logout", destroy_drinker_session_path, method: :delete %>
+</div>

@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+Ticket:
+  fields:
+    default: drinker_id, festival_id, restaurant_id, passcode
+    form: drinker_id, festival_id, restaurant_id, passcode
+  relationships: 
+  application: Application

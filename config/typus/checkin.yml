@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+Checkin:
+  fields:
+    default: drinker_id, restaurant_id
+    form: drinker_id, restaurant_id
+  relationships: 
+  application: Application

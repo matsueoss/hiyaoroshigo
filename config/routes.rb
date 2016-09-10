@@ -16,5 +16,5 @@ Rails.application.routes.draw do
 >>>>>>> upstream/master
   get :itsitoolate, to: "festivals#itstoolate"
   get :thewinner, to: "festivals#thewinner"
-  resources :checkins, only: [:new, :create]
+  resources :checkins, only: [:new, :create, :show]
 end

@@ -1,11 +1,23 @@
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
+<div id="restaurant">
+</div>
 
 <script type="text/javascript">
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
       markers = handler.addMarkers(<%=raw @markers.to_json %>);
+      markers.map(function(marker) {
+        var id = marker.getServiceObject().title;
+        marker.getServiceObject().addListener('click', function(e) {
+          $.ajax({
+            url: "/restaurants/" + id
+          }).success(function(data) {
+            $("#restaurant").empty().append(data);
+          });
+        });
+      });
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
     });

@@ -21,4 +21,16 @@ class Drinker < ApplicationRecord
 
     drinker
   end
+
+  def checked_in?
+    Checkin.exists?(:drinker_id => self.id)
+  end
+
+  def checked_in_restaurant_id
+    latest_checkin = Checkin
+      .where(:drinker_id => self.id)
+      .order("created_at DESC")
+      .first
+    latest_checkin.restaurant_id
+  end
 end

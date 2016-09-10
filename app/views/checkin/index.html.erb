@@ -3,9 +3,9 @@
   <form>
     <select name="shop">
       <% @restaurants.each do |restaurant| %>
-        <option value="<% restaurant.name %>"><%= restaurant.name %></option>
+        <option value="<% restaurant.id %>"><%= restaurant.name %></option>
       <% end %>
     </select>
-    <input type="submit" value="送信"><input type="reset" value="リセット">
+    <input type="submit" value="送信" , "/restaurants/<% restaurant.id %>/checkin"><input type="reset" value="リセット">
   </form>
 </div>

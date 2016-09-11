@@ -5,6 +5,12 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+  def show
+    @restaurant = Restaurant.find_by(id: params[:id])
+=======
+=======
   def show
     @restaurant = Restaurant.find(params[:id])
     if request.xhr?
@@ -12,6 +18,7 @@ class RestaurantsController < ApplicationController
     end
   end
 
+>>>>>>> upstream/master
   def map
     @restaurants = Restaurant.all
     @restaurant =
@@ -32,5 +39,6 @@ class RestaurantsController < ApplicationController
       # marker.infowindow "#{restaurant.name} (#{current}/#{max})"
       marker.title restaurant.id.to_s
     end
+>>>>>>> upstream/master
   end
 end

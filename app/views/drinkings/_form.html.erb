@@ -1,0 +1,8 @@
+<%= form_for @vote, :url => { :controller => :drinkings, :action => :create }, remote: true do |f| %>
+  <% SakeTemperatures.enabled.all.each do |sake_temperature| %>
+    <%= f.select :sake_temperature, sake_temperature.name %>
+  <% end %>
+  <%= f.label :score, '評価' %>
+  <%= f.select :score, 1..5 %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

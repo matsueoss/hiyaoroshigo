@@ -1,0 +1,4 @@
+<h1>show</h1>
+<% @restaurant.sake_menu_items.each do |item| %>
+  <p><%= link_to item.sake.name, restaurant_sakes_path(restaurant_id: @restaurant, id: item) %></p>
+<% end %>

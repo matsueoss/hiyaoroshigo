@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show] do
     resources :sakes, only: [:index]
   end
+<<<<<<< HEAD
+  resources :drinkings, only: [:index, :new, :create, :delete, :show]
+=======
   resources :drinkers, only: [:show, :edit, :update]
   resources :drinkings, only: [:index, :new, :create, :delete]
+>>>>>>> upstream/master
   get :itsitoolate, to: "festivals#itstoolate"
   get :thewinner, to: "festivals#thewinner"
   resources :checkins, only: [:new, :create, :show]

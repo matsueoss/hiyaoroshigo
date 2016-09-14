@@ -18,3 +18,10 @@ input[type=button].normal {
   background-image: url(../../assets/wood_button.png);
   border-bottom: 1vw solid #977C12;
 }
+
+button.normal:active,
+input[type=submit].normal:active,
+input[type=button].normal:active {
+  border-top: 1vw solid #977C12;
+  border-bottom: 0px;
+}

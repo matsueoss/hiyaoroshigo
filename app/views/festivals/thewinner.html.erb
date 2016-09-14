@@ -3,7 +3,7 @@
 <div class="thewinner-wrap-content">
   <p class="thewinner-no1">1位は...</p>
   <p class="thewinner-hiyaoroshi"><%= @sake.name %></p>
-  <p class="thweinner-image">
-    <%= image_tag @sake.photo.url %>
+  <p class="thewinner-image">
+    <%= image_tag @sake.photo(:medium) %>
   </p>
 </div>

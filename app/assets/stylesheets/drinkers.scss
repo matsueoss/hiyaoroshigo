@@ -60,13 +60,8 @@ button:focus {
   outline: none;
 }
 
-input[type=submit].sign-in:hover{
-  border-top: 4px solid #977C12;
-  border-bottom: 0px;
-}
-
-button.facebook:hover{
-  border-top: 4px solid #1f356b;
+button.facebook:active {
+  border-top: 1vw solid #1f356b;
   border-bottom: 0px;
 }
 

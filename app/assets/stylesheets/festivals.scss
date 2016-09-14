@@ -5,7 +5,18 @@
 {
   text-align:center; margin-top:0px;padding-top:0px;
   #{&}-title { margin-top:-2vw; font-size:7vw }
-  #{&}-wrap-content { background-image:url(""); padding-bottom:20vw; padding-top:11vw;}
+  #{&}-wrap-content {
+    background-image: url("../assets/result-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height:126vw;
+    padding-top:11vw;
+  }
   #{&}-no1{ font-weight:bold; font-size:6vw; margin-bottom:2vw; }
   #{&}-hiyaoroshi{ font-weight:bold; font-size:7vw; margin-top:0px; color:#D30F13; }
+  #{&}-image img {
+    width: 70vw;
+    height: 49vw;
+  }
 }

@@ -13,8 +13,11 @@ class Drinker < ApplicationRecord
     drinker = Drinker.where(provider: auth.provider, uid: auth.uid).first
     error = ""
     status = false
-    status = true if drinker
-    unless drinker
+    first = false
+
+    if drinker
+      status = true
+    else
       ticket = Ticket.find_by(passcode: params["passcode"])
       if ticket.present?
         if ticket.unused?
@@ -26,6 +29,7 @@ class Drinker < ApplicationRecord
                                password: Devise.friendly_token)
           ticket.save!
           status = true
+          first = true
           drinker = ticket.drinker
         else
           error = "既に使われているパスコードです"
@@ -34,7 +38,7 @@ class Drinker < ApplicationRecord
         error = "存在しないパスコードです"
       end
     end
-    {status: status, drinker: drinker, error: error}
+    {status: status, drinker: drinker, error: error, first: first}
   end
 
   def checked_in?

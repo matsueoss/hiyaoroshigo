@@ -3,11 +3,16 @@ Rails.application.routes.draw do
 
   get 'sakes/index'
 
-  devise_for :drinker, controllers:{ omniauth_callbacks: "drinker/omniauth_callbacks" }
+  devise_for :drinker, controllers:{ omniauth_callbacks: "drinker/omniauth_callbacks" }, skip: [:session]
+
+  devise_scope :drinker do
+    get 'login' => 'drinkers#login', as: :new_drinker_session
+    post 'login' => 'drinkers#login', as: :drinker_session
+    get 'logout' => 'devise/sessions#destroy', as: :destroy_drinker_session
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resource :terms, only: [:show]
   get :signup, to: "drinkers#redirector"
-  get :login, to: "drinkers#login"
   resources :festivals, only: [:index, :show]
   get "/restaurants/vote", to: "restaurants#vote"
   get "/restaurants/map", to: "restaurants#map"

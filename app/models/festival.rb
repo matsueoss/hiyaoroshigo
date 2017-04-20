@@ -5,8 +5,13 @@ class Festival < ApplicationRecord
   has_many :sake_menu_items
 
   scope :current, lambda {
-    now = Time.current
-    where('start_at <= ? AND ? <= end_at', now, now)
+    today = Time.zone.today
+
+    if Rails.env.production?
+      where('start_at <= ? AND ? <= end_at', today, today)
+    else
+      where('? <= end_at', today)
+    end
   }
   
   def started?
